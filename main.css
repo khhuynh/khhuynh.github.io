@@ -1,8 +1,44 @@
-header {
-  text-align: center;
-  font-size: 5.24vw;
+:root {
+  font-family: Sans-Serif;
+  --max-resolution: 105;
+  --min-resolution: 40;
+  --max-resolution-rem: calc(var(--max-resolution)*1rem);
+  --min-resolution-rem: calc(var(--min-resolution)*1rem);
+  --max-width: 70;
+  --min-width: 32;
+  --max-width-rem: calc(var(--max-width)*1rem);
+  --min-width-rem: calc(var(--min-width)*1rem);
+  --max-body-font-size: 2.625;
+  --min-body-font-size: 1.000;
+  --max-body-font-size-rem: calc(var(--max-body-font-size)*1rem);
+  --min-body-font-size-rem: calc(var(--min-body-font-size)*1rem);
+  --max-body-font-height: 3.15;
+  --min-body-font-height: 1.20;
+  --max-body-font-height-rem: calc(var(--max-body-font-height)*1rem);
+  --min-body-font-height-rem: calc(var(--min-body-font-height)*1rem);
 }
 
-p {
-  font-size: 2vw;
+header {
+  margin: auto;
+  width: calc(var(--min-width-rem) + (var(--max-width) - var(--min-width)) *
+           (100vw - var(--min-resolution-rem)) / 
+           (var(--max-resolution) - var(--min-resolution)));
+}
+
+section {
+  margin: auto;
+  width: calc(var(--min-width-rem) + (var(--max-width) - var(--min-width)) *
+           (100vw - var(--min-resolution-rem)) / 
+           (var(--max-resolution) - var(--min-resolution)));
+}
+
+body {
+  font-size: calc(var(--min-body-font-size-rem) +
+               (var(--max-body-font-size) - var(--min-body-font-size)) *
+               (100vw - var(--min-resolution-rem)) /
+               (var(--max-resolution) - var(--min-resolution)));
+  line-height: calc(var(--min-body-font-height-rem) + 
+                 (var(--max-body-font-height) - var(--min-body-font-height)) *
+                 (100vw - var(--min-resolution-rem)) /
+                 (var(--max-resolution) - var(--min-resolution)));
 }
